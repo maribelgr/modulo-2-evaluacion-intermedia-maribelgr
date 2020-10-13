@@ -3,7 +3,29 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Mód. 2 Evaluación intermedia</title>
+    <link rel="stylesheet" href="./styles/main.css" />
   </head>
-  <body></body>
+  <body>
+    <h1>Adivina el número</h1>
+    <form action="">
+      <label class="label-number" for="number">Introduce aquí tu número:</label>
+      <input
+        class="js-number number"
+        type="number"
+        name="number"
+        id="number"
+        placeholder="Número entre 1 y 100"
+      />
+
+      <input class="js-button button" type="button" value="Prueba" />
+    </form>
+    <div class="clue">
+      <p>Pista: Escribe el número y dale a Prueba</p>
+    </div>
+    <div class="attempts">
+      <p>Número de intentos: 0</p>
+    </div>
+    <script src="./js/main.js"></script>
+  </body>
 </html>
