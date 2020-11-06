@@ -16,30 +16,32 @@ let randomNumber = getRandomNumber(100);
 
 console.log(randomNumber);
 
-// Añadir número de intentos
-function addAttempts() {
-  attemps += 1;
-}
-
 //Genero funcion para añadir números y pista
 function addNumber() {
-  const inputNumber = inputNumber.value;
-  if (inputNumber < 1 || inputNumber > 100) {
+  let inputValue = parseInt(inputNumber.value);
+
+  if (inputValue < 1 || inputValue > 100) {
     clue.innerHTML = "El número debe estar entre 1 y 100";
-    addAttempts();
-  } else if (inputNumber < randomNumber) {
+    console.log("num no válido");
+  } else if (inputValue < randomNumber) {
     clue.innerHTML = "Tu número es demasiado bajo";
-    addAttempts();
-  } else if (inputNumber > randomNumber) {
+    console.log("num bajo");
+  } else if (inputValue > randomNumber) {
     clue.innerHTML = "Tu número es demasiado alto";
-    addAttempts();
+    console.log("num alto");
   } else {
     clue.innerHTML = "Has ganado, campeona!!";
   }
+  counter();
 }
 
-console.log(clue);
+//Función contador: declarar constante y luego función
 
-//funcion para mostrar textos
+let counterclick = 0;
 
-button.addEventListener("click", showText);
+function counter() {
+  counterclick++;
+  attempts.innerHTML = counterclick;
+}
+
+button.addEventListener("click", addNumber);
